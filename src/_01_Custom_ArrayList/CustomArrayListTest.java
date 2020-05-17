@@ -14,9 +14,9 @@ public class CustomArrayListTest {
 		list.add(1);
 		list.add(206);
 	
-		if(list.get(0) != 0) fail("list.get(0) returning improper value.");
-		if(list.get(1) != 1) fail("list.get(1) returning improper value.");
-		if(list.get(2) != 206) fail("list.get(2) returning improper value.");
+		if(list.get(0) != 0) fail("Error! Error! You went out of bounds. Error! Error! list.get(0) returning improper value.");
+		if(list.get(1) != 1) fail("Error! Error! You went out of bounds. Error! Error! list.get(1) returning improper value.");
+		if(list.get(2) != 206) fail("Error! Error! You went out of bounds. Error! Error! list.get(2) returning improper value.");
 	}
 	
 	@Test
