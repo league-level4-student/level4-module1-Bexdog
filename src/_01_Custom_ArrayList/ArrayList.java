@@ -31,15 +31,48 @@ public class ArrayList <T>{
 	}
 	
 	public void set(int loc, T val) throws IndexOutOfBoundsException {
-		
+		if(loc>=arr.length||loc<0) {
+			throw new IndexOutOfBoundsException("Error! Error! You went out of bounds. Error! Error! list.get("+loc+") returning improper value.");
+		}
+		else {
+			arr[loc] = val;
+		}
 	}
 	
 	public void remove(int loc) throws IndexOutOfBoundsException {
+		T[] temp = (T[]) new Object[arr.length-1];
+		if(loc>=arr.length||loc<0) {
+			throw new IndexOutOfBoundsException("Error! Error! You went out of bounds. Error! Error! list.get("+loc+") returning improper value.");
+		}
+		else {
+			
+			for(int i = 0; i<arr.length-1;i++) {
+				if(i>=loc) {
+					temp[i] = arr[i+1];
+					
+				}
+				else {
+				temp[i] = arr[i];
+				
+				}
+			}
+			arr = temp;
+		}
+		
 		
 	}
 	
 	public boolean contains(T val) {
-		
+		for(int i = 0; i<arr.length;i++) {
+			if(arr[i]==val) {
+				return true;
+			}
+		}
 		return false;
+	}
+
+	public int size() {
+		
+		return arr.length;
 	}
 }

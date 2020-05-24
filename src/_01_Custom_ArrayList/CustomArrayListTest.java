@@ -29,10 +29,10 @@ public class CustomArrayListTest {
 		
 		list.set(2, "PICKLES");
 		
-		if(!list.get(0).equals("TESTER")) fail("list.get(0) returning improper value.");
-		if(!list.get(1).equals("ONE"))  fail("list.get(1) returning improper value.");
-		if(!list.get(2).equals("PICKLES"))  fail("list.get(2) returning improper value.");
-		if(!list.get(3).equals("THREE"))  fail("list.get(3) returning improper value.");
+		if(!list.get(0).equals("TESTER")) fail("Error! Error! You went out of bounds. Error! Error! list.get(0) returning improper value.");
+		if(!list.get(1).equals("ONE"))  fail("Error! Error! You went out of bounds. Error! Error! list.get(1) returning improper value.");
+		if(!list.get(2).equals("PICKLES"))  fail("Error! Error! You went out of bounds. Error! Error! list.get(2) returning improper value.");
+		if(!list.get(3).equals("THREE"))  fail("Error! Error! You went out of bounds. Error! Error! list.get(3) returning improper value.");
 	}
 	
 	@Test
@@ -40,16 +40,17 @@ public class CustomArrayListTest {
 		ArrayList<Character> list = new ArrayList<Character>();
 		list.add('D');
 		list.add('I');
+		list.add('E');
 		list.add('G');
 		list.add('O');
 		
 		list.insert(2, 'E');
 		
-		if(list.get(0) != 'D') fail("list.get(0) returning improper value.");
-		if(list.get(1) != 'I') fail("list.get(1) returning improper value.");
-		if(list.get(2) != 'E') fail("list.get(2) returning improper value.");
-		if(list.get(3) != 'G') fail("list.get(3) returning improper value.");
-		if(list.get(4) != 'O') fail("list.get(4) returning improper value.");
+		if(list.get(0) != 'D') fail("Error! Error! You went out of bounds. Error! Error! list.get(0) returning improper value.");
+		if(list.get(1) != 'I') fail("Error! Error! You went out of bounds. Error! Error! list.get(1) returning improper value.");
+		if(list.get(2) != 'E') fail("Error! Error! You went out of bounds. Error! Error! list.get(2) returning improper value.");
+		if(list.get(3) != 'G') fail("Error! Error! You went out of bounds. Error! Error! list.get(3) returning improper value.");
+		if(list.get(4) != 'O') fail("Error! Error! You went out of bounds. Error! Error! list.get(4) returning improper value.");
 	}
 	
 	@Test
@@ -69,21 +70,21 @@ public class CustomArrayListTest {
 		list.remove(0);
 		
 		if(!list.get(0).name.equals("Sara")) {
-			fail("list.get(0) returning improper value.");
+			fail("Error! Error! You went out of bounds. Error! Error! list.get(0) returning improper value.");
 		}
 		if(!list.get(1).name.equals("Kamara")) {
-			fail("list.get(1) returning improper value.");
+			fail("Error! Error! You went out of bounds. Error! Error! list.get(1) returning improper value.");
 		}
 		if(!list.get(2).name.equals("Devaugn")) {
-			fail("list.get(2) returning improper value.");
+			fail("Error! Error! You went out of bounds. Error! Error! list.get(2) returning improper value.");
 		}
 		
 		list.remove(2);
 		if(!list.get(0).name.equals("Sara")) {
-			fail("list.get(0) returning improper value.");
+			fail("Error! Error! You went out of bounds. Error! Error! list.get(0) returning improper value.");
 		}
 		if(!list.get(1).name.equals("Kamara")) {
-			fail("list.get(1) returning improper value.");
+			fail("Error! Error! You went out of bounds. Error! Error! list.get(1) returning improper value.");
 		}
 	}
 	
