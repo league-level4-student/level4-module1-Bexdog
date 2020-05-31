@@ -39,16 +39,24 @@ public class Snake {
 		Location next = new Location(0,0);
 		switch(currentDirection) {
 		case UP:
-			next = new Location(head.getLocation().x, head.getLocation().y+1);
+			
+			next = new Location(head.getLocation().x, head.getLocation().y-1);
+			
 			break;
 		case DOWN:
-			next = new Location(head.getLocation().x, head.getLocation().y-1);
+			
+			next = new Location(head.getLocation().x, head.getLocation().y+1);
+			
 			break;
 		case LEFT:
+			
 			next = new Location(head.getLocation().x-1, head.getLocation().y);
+			
 			break;
 		case RIGHT:
+			
 			next = new Location(head.getLocation().x+1, head.getLocation().y);
+			
 			break;
 		}
 
@@ -56,8 +64,8 @@ public class Snake {
 		//2a. Update each snake segment to the location of the segment 
 		//    in front of it.
 		
-		for(int i = snake.size();i>=0;i--) {
-			snake.get(i).setLocation(snake.get(i+1).getLocation());
+		for(int i = snake.size()-1;i>0;i--) {
+			snake.get(i).setLocation(snake.get(i-1).getLocation());
 		}
 		
 		//3. set the location of the head to the new location calculated in step 1
@@ -104,8 +112,8 @@ public class Snake {
 	public boolean isHeadCollidingWithBody() {
 		//1. complete the method so it returns true if the head is located
 		//   in the same location as any other body segment
-		for(int i = 0; i<snake.size();i++) {
-			if(snake.get(i).getLocation()==head.getLocation()) {
+		for(int i = 1; i<snake.size();i++) {
+			if(snake.get(i).getLocation().equals(head.getLocation())) {
 				return true;
 			}
 		}
@@ -116,7 +124,7 @@ public class Snake {
 		//1. complete the method so it returns true if the passed in
 		//   location is located on the snake
 		for(int i = 0; i<snake.size();i++) {
-			if(snake.get(i).getLocation()==loc) {
+			if(snake.get(i).getLocation().equals(loc)) {
 				return true;
 			}
 		}
